@@ -1,0 +1,12 @@
+.nav-bar-button {
+    width: 24px;
+    height: 24px;
+    box-sizing: content-box;
+    border-radius: 9999px;
+    border: none;
+    padding: 0.5rem
+}
+
+.nav-bar-button:hover {
+    background-color: lightgray;
+}
