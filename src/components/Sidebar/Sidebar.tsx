@@ -10,12 +10,14 @@ import { GrTechnology } from "react-icons/gr";
 import { BsPersonVideo } from "react-icons/bs";
 import { PiTelevisionBold } from "react-icons/pi";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
-const sidebarButtonStyle =
-  "w-full gap-2 flex justify-start bg-white text-black hover:bg-slate-200";
+
 type SidebarProps = {
-  isCollapse: boolean;
+  isCollapse?: boolean;
 };
+
 const Sidebar = ({ isCollapse = false }: SidebarProps) => {
+  const sidebarButtonStyle =
+  `w-full gap-2 flex  bg-white text-black hover:bg-slate-200 ${isCollapse ? "justify-center" : "justify-start"}`;
   return (
     <div className={`${!isCollapse ? "max-w-[240px]" : "max-w-fit"}`}>
       <ul className="flex flex-col">
@@ -68,7 +70,7 @@ const Sidebar = ({ isCollapse = false }: SidebarProps) => {
           </Button>
         </li>
       </ul>
-      <hr className="mx-3" />
+      <hr className="m-3" />
       {!isCollapse && <h3 className="m-3">Subscribed</h3>}
 
       <ul>

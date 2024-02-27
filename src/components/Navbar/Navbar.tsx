@@ -19,13 +19,13 @@ import {
 } from "../ui/sheet";
 const Navbar = () => {
   return (
-    <nav className="flex justify-between px-5 py-2 items-center sticky shadow-lg">
+    <nav className="flex justify-between px-5 py-2 items-center sticky shadow-lg top-0 bg-white">
       <div className="flex items-center gap-2">
         <Sheet>
           <SheetTrigger>
-            <Button variant="ghost" size="icon">
+            <div className="p-2">
               <GiHamburgerMenu className="w-5 h-5" />
-            </Button>
+            </div>
           </SheetTrigger>
           <SheetContent className="p-2 w-fit overflow-auto" side="left">
             <SheetHeader>
