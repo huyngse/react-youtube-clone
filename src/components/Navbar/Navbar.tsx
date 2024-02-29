@@ -17,6 +17,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "../ui/sheet";
+import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <nav className="flex justify-between px-5 py-2 items-center sticky shadow-lg top-0 bg-white">
@@ -31,14 +32,14 @@ const Navbar = () => {
             <SheetHeader>
               <SheetTitle className="px-2">
                 {" "}
-                <button className="flex items-center gap-2">
+                <Link className="flex items-center gap-2" to={"/"}>
                   <img
                     src={YoutubeLogo}
                     alt="Youtube logo"
                     className="h-[24px]"
                   />
                   <div className="font-bold">Youtube</div>
-                </button>
+                </Link>
               </SheetTitle>
               <SheetDescription>
                 <Sidebar></Sidebar>
@@ -46,10 +47,10 @@ const Navbar = () => {
             </SheetHeader>
           </SheetContent>
         </Sheet>
-        <button className="flex items-center gap-2">
+        <Link className="flex items-center gap-2" to={'/'}>
           <img src={YoutubeLogo} alt="Youtube logo" className="h-[24px]" />
           <div className="font-bold">Youtube</div>
-        </button>
+        </Link>
       </div>
       <div className="border border-black rounded-full overflow-hidden flex items-center">
         <input
