@@ -3,7 +3,6 @@ import {
   IoHomeOutline,
   IoMusicalNotesOutline,
 } from "react-icons/io5";
-import { Button } from "../ui/button";
 import { GoTrophy } from "react-icons/go";
 import { LuNewspaper } from "react-icons/lu";
 import { GrTechnology } from "react-icons/gr";
@@ -17,9 +16,6 @@ type SidebarProps = {
 };
 
 const Sidebar = ({ isCollapse = false }: SidebarProps) => {
-  const sidebarButtonStyle = `w-full gap-2 flex  bg-white text-black hover:bg-slate-200 ${
-    isCollapse ? "justify-center" : "justify-start"
-  }`;
   return (
     <div className={`${!isCollapse ? "max-w-[240px]" : "max-w-fit"}`}>
       <ul className={`flex flex-col ${isCollapse && "items-center"}`}>
