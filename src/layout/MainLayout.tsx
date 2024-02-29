@@ -1,14 +1,15 @@
 import Navbar from "@/components/Navbar/Navbar";
 import { ReactNode } from "react";
 
-type MainLayoutProps = {
+interface MainLayoutProps extends React.ButtonHTMLAttributes<HTMLDivElement> {
   children: ReactNode;
-};
-const MainLayout = ({ children }: MainLayoutProps) => {
+}
+
+const MainLayout = ({ children, ...props }: MainLayoutProps) => {
   return (
     <div className="max-h-[100vh] flex flex-col">
       <Navbar />
-      {children}
+      <div {...props}>{children}</div>
     </div>
   );
 };
