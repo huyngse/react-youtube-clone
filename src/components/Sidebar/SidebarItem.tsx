@@ -1,7 +1,12 @@
 import { ReactNode } from "react";
 import { Button } from "../ui/button";
 import { Link } from "react-router-dom";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../ui/tooltip";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "../ui/tooltip";
 
 type SidebarItemProps = {
   href: string;
@@ -18,11 +23,18 @@ const SidebarItem = ({
   const sidebarButtonStyle = `w-full gap-2 flex  bg-white text-black hover:bg-slate-200 ${
     isCollapse ? "justify-center" : "justify-start"
   }`;
+  if (!isCollapse) {
+    return (
+      <Link to={href}>
+        <Button className={sidebarButtonStyle}>{children}</Button>
+      </Link>
+    );
+  }
   return (
     <TooltipProvider>
       <Tooltip>
         <TooltipTrigger className="w-full">
-          <Link to={href} >
+          <Link to={href}>
             <Button className={sidebarButtonStyle}>{children}</Button>
           </Link>
         </TooltipTrigger>
